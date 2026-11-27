@@ -1,0 +1,6 @@
+:root{--muted:#5d6879}
+.repo-count,.count-pill{color:#123d91}
+.room-presence,.room-item small,.repo-link small,.repo-hint{color:#526072}
+.message-meta{color:#4d596a}
+.message.mine .message-meta{color:#eef3ff}
+.attention-label,.attention-pulse{color:#91410c}
