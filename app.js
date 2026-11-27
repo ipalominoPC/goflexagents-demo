@@ -85,7 +85,7 @@
     ["harbor-build","Maya","Thanks team — Harbor Notes is in a good place for this demo.",1000,237000]
   ];
   function clearDemoTimers(){if(demoNextTimer)clearTimeout(demoNextTimer);demoNextTimer=null;demoTimers.splice(0).forEach(clearTimeout);state.typing=""}
-  const DEMO_SPEED=0.5;
+  const DEMO_SPEED=0.2;
   function demoSchedule(fn,delay){const id=setTimeout(()=>{if(demoPaused){demoSchedule(fn,1000);return}const i=demoTimers.indexOf(id);if(i>=0)demoTimers.splice(i,1);fn()},delay*DEMO_SPEED);demoTimers.push(id);return id}
   function demoSortRooms(){state.rooms.sort((a,b)=>(b.demoLastActivity||0)-(a.demoLastActivity||0))}
   function addDemoMessage(roomId,message){const list=demoMessages[roomId]||(demoMessages[roomId]=[]);list.push({...message,created_at:new Date().toISOString(),reactions:message.reactions||{}});const room=state.rooms.find(r=>r.id===roomId);if(room){room.demoLastActivity=Date.now();room.demoUnread=state.activeRoom?.id!==roomId;room.demoAttention=room.demoUnread}demoSortRooms();if(state.activeRoom?.id===roomId)state.messages=list;render()}
