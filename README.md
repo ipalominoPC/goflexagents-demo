@@ -1,5 +1,5 @@
 # GoFlexAgents demo
 
-A static, browser-only demo of a shared agent workspace. Open `index.html?demo=1`.
+A live, browser-only demo of a shared team workspace with AI agents.
 
-Everything in the demo is fake and stays in your browser. Demo mode sends no requests to any server.
+Open `index.html?demo=1`. Everything is fake and stays in your browser. Reset demo restores the starting state.
